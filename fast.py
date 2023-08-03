@@ -11,7 +11,7 @@ model = IrisModel()
 def home():
     return {'message':'Welcome'}
 
-@app.get('/predict')
+@app.post('/predict')
 def predict_species(iris: IrisSpecies):
     data = iris.dict()
     prediction, probability = model.predict_species(
